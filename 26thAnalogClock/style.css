@@ -1,0 +1,72 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: sans-serif;
+}
+
+:root {
+  --primary-color: #f6f7fb;
+  --white-color: #fff;
+  --black-color: #18191a;
+  --red-color: #e74c3c;
+}
+
+body {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh;
+  background: var(--primary-color);
+}
+
+.container .clock {
+  display: flex;
+  height: 400px;
+  width: 400px;
+  border-radius: 50%;
+  justify-content: center;
+  align-items: center;
+  background-color: var(--white-color);
+  box-shadow: 0 15px 25px rgba(0,0,0,0.1),0 15px 45px rgba(0,0,0,0.1) ;
+  position: relative;
+
+}
+
+.clock label{
+    position: absolute;
+    inset: 20px;
+    transform: rotate(calc(var(--i) * (360deg/12)));
+    text-align: center;
+}
+
+.clock label span{
+    display: inline-block;
+    font-size: 30px;
+    font-weight: 600;
+    color: var(--black-color);
+    transform: rotate(calc(var(--i) * (-360deg/12)));
+}
+
+.container .indicator {
+    position: absolute;
+    height: 10px;
+    width: 10px;
+    background-color: red;
+}
+.indicator::before{
+    content: "";
+    position: absolute;
+    height: 100px;
+    width: 10px;
+    background-color: red;
+}
+
+.indicator::after{
+    content: "";
+    position: absolute;
+    height: 100px;
+    width: 10px;
+    background-color: red;
+transform: rotate(20deg);
+}
